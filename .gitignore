@@ -1,0 +1,15 @@
+# Visual Studio 临时文件
+.vs/
+*.user
+*.suo
+
+# 编译输出
+bin/
+obj/
+
+# NuGet 包
+packages/
+
+# 其他临时文件
+*.log
+*.tmp
