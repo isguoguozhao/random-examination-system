@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "D:\\project\\\u63A5\u5355\\\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8D5BBE38-349D-4210-B180-D467602FE9C4}|\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6.csproj|d:\\project\\\u63A5\u5355\\\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6\\ui\\forms\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8D5BBE38-349D-4210-B180-D467602FE9C4}|\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6.csproj|d:\\project\\\u63A5\u5355\\\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D5BBE38-349D-4210-B180-D467602FE9C4}|\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D5BBE38-349D-4210-B180-D467602FE9C4}|\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6.csproj|D:\\project\\\u63A5\u5355\\\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6\\ui\\forms\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8D5BBE38-349D-4210-B180-D467602FE9C4}|\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6.csproj|solutionrelative:ui\\forms\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8D5BBE38-349D-4210-B180-D467602FE9C4}|\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6.csproj|D:\\project\\\u63A5\u5355\\\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6\\ui\\forms\\examactivityform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8D5BBE38-349D-4210-B180-D467602FE9C4}|\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6.csproj|solutionrelative:ui\\forms\\examactivityform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D5BBE38-349D-4210-B180-D467602FE9C4}|\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6.csproj|D:\\project\\\u63A5\u5355\\\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D5BBE38-349D-4210-B180-D467602FE9C4}|\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainForm.Designer.cs",
               "DocumentMoniker": "D:\\project\\\u63A5\u5355\\\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6\\UI\\Forms\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "UI\\Forms\\MainForm.Designer.cs",
@@ -42,12 +42,11 @@
               "RelativeToolTip": "UI\\Forms\\MainForm.Designer.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAcwD4AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T16:25:22.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-19T16:25:22.117Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainForm.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\project\\\u63A5\u5355\\\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6\\UI\\Forms\\MainForm.cs",
               "RelativeDocumentMoniker": "UI\\Forms\\MainForm.cs",
@@ -58,7 +57,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DatabaseInitializer.cs",
               "DocumentMoniker": "D:\\project\\\u63A5\u5355\\\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6\\DAL\\DatabaseInitializer.cs",
               "RelativeDocumentMoniker": "DAL\\DatabaseInitializer.cs",
@@ -70,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ExamActivityForm.Designer.cs",
               "DocumentMoniker": "D:\\project\\\u63A5\u5355\\\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6\\UI\\Forms\\ExamActivityForm.Designer.cs",
               "RelativeDocumentMoniker": "UI\\Forms\\ExamActivityForm.Designer.cs",
@@ -82,15 +81,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\project\\\u63A5\u5355\\\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\project\\\u63A5\u5355\\\u5355\u4F4D\u62BD\u8003win7\u8F6F\u4EF6\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:06:43.093Z"
+              "WhenOpened": "2026-03-18T04:06:43.093Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -150,14 +150,12 @@ namespace 单位抽考win7软件.UI.Forms
 
         private void menuMustHitRule_Click(object sender, EventArgs e)
         {
-            // TODO: 创建 MustHitRuleForm
-            MessageBox.Show("必抽规则功能待实现", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            OpenForm(new MustHitRuleForm());
         }
 
         private void menuLog_Click(object sender, EventArgs e)
         {
-            // TODO: 创建 LogForm
-            MessageBox.Show("日志查看功能待实现", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            OpenForm(new LogForm());
         }
 
         private void menuChangePassword_Click(object sender, EventArgs e)

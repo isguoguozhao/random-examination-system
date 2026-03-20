@@ -19,7 +19,20 @@ namespace 单位抽考win7软件
             // 初始化数据库
             DatabaseInitializer.Initialize();
 
-            Application.Run(new MainForm());
+            // 显示登录界面
+            using (LoginForm loginForm = new LoginForm())
+            {
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    // 登录成功，显示主界面
+                    Application.Run(new MainForm());
+                }
+                else
+                {
+                    // 登录失败或取消，退出程序
+                    Application.Exit();
+                }
+            }
         }
     }
 }

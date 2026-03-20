@@ -36,5 +36,10 @@ namespace 单位抽考win7软件.Common.Entities
         /// 操作时间
         /// </summary>
         public DateTime OperationTime { get; set; }
+
+        /// <summary>
+        /// 用户名（联表查询获取，非数据库字段）
+        /// </summary>
+        public string UserName { get; set; }
     }
 }

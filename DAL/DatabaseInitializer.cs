@@ -321,8 +321,8 @@ namespace 单位抽考win7软件.DAL
                             }
                         }
 
-                        // 插入默认管理员账号 admin/admin
-                        string hashedPassword = HashPassword("admin");
+                        // 插入默认管理员账号 admin/admin123
+                        string hashedPassword = HashPassword("admin123");
                         string insertUserSql = "INSERT INTO SysUser (UserName, Password, RealName, Status) VALUES ('admin', @password, '系统管理员', 1)";
                         using (SQLiteCommand cmd = new SQLiteCommand(insertUserSql, conn, trans))
                         {

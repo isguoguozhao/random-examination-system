@@ -13,6 +13,22 @@ namespace 单位抽考win7软件.BLL.Services
     public class MustHitRuleService
     {
         /// <summary>
+        /// 获取所有规则
+        /// </summary>
+        public List<ExamMustHitRule> GetAllRules()
+        {
+            List<ExamMustHitRule> rules = new List<ExamMustHitRule>();
+            string sql = "SELECT * FROM ExamMustHitRule ORDER BY Id DESC";
+            DataTable dt = SQLiteHelper.ExecuteDataTable(sql);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                rules.Add(DataRowToMustHitRule(row));
+            }
+            return rules;
+        }
+
+        /// <summary>
         /// 根据ID获取规则
         /// </summary>
         public ExamMustHitRule GetById(int id)

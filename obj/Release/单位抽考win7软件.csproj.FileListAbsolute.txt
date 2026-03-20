@@ -18,4 +18,3 @@ D:\project\接单\单位抽考win7软件\obj\Release\单位抽考win7软件.cspr
 D:\project\接单\单位抽考win7软件\obj\Release\单位抽考win7软件.csproj.Up2Date
 D:\project\接单\单位抽考win7软件\obj\Release\单位抽考win7软件.exe
 D:\project\接单\单位抽考win7软件\obj\Release\单位抽考win7软件.pdb
-D:\project\接单\单位抽考win7软件\obj\Release\单位抽考win7软件.exe.config

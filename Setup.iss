@@ -21,6 +21,8 @@ SolidCompression=yes
 PrivilegesRequired=admin
 ; 允许安装到用户目录
 PrivilegesRequiredOverridesAllowed=dialog
+; 最低 .NET Framework 版本要求
+MinVersion=6.1sp1
 
 [Languages]
 Name: "chinesesimplified"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
@@ -35,7 +37,7 @@ Source: "bin\Release\x86\SQLite.Interop.dll"; DestDir: "{app}"; Flags: ignorever
 ; 配置文件
 Source: "bin\Release\*.config"; DestDir: "{app}"; Flags: ignoreversion
 ; LOGO文件
-Source: "LOGO.jpg"; DestDir: "{app}"; Flags: ignoreversion
+Source: "LOGO.png"; DestDir: "{app}"; Flags: ignoreversion
 
 [Dirs]
 ; 创建数据目录

@@ -185,6 +185,18 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Forms\PasswordForm.Designer.cs" />
+    <Compile Include="UI\Forms\MustHitRuleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\MustHitRuleForm.Designer.cs" />
+    <Compile Include="UI\Forms\MustHitRuleEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\MustHitRuleEditForm.Designer.cs" />
+    <Compile Include="UI\Forms\LogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\LogForm.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
