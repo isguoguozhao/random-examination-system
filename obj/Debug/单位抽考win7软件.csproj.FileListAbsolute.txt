@@ -1,0 +1,5 @@
+d:\project\接单\单位抽考win7软件\obj\Debug\单位抽考win7软件.csproj.AssemblyReference.cache
+d:\project\接单\单位抽考win7软件\obj\Debug\单位抽考win7软件.Properties.Resources.resources
+d:\project\接单\单位抽考win7软件\obj\Debug\单位抽考win7软件.UI.Forms.NewExamDrawForm.resources
+d:\project\接单\单位抽考win7软件\obj\Debug\单位抽考win7软件.csproj.GenerateResource.cache
+d:\project\接单\单位抽考win7软件\obj\Debug\单位抽考win7软件.csproj.CoreCompileInputs.cache

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using 单位抽考win7软件.BLL.Services;
+using 单位抽考win7软件.Common;
 using 单位抽考win7软件.Common.Entities;
 
 namespace 单位抽考win7软件.UI.Forms
@@ -15,6 +16,7 @@ namespace 单位抽考win7软件.UI.Forms
         public OrgUnitForm()
         {
             InitializeComponent();
+            ModernTechTheme.ApplyTheme(this);
             _orgUnitService = new OrgUnitService();
             LoadOrgUnits();
         }
@@ -53,6 +55,74 @@ namespace 单位抽考win7软件.UI.Forms
         private void BindGrid()
         {
             dgvOrgUnit.DataSource = null;
+            dgvOrgUnit.AutoGenerateColumns = false;
+            dgvOrgUnit.Columns.Clear();
+            
+            // 手动添加列并设置中文标题
+            dgvOrgUnit.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Id",
+                DataPropertyName = "Id",
+                HeaderText = "编号",
+                Width = 60
+            });
+            dgvOrgUnit.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "UnitName",
+                DataPropertyName = "UnitName",
+                HeaderText = "单位名称",
+                Width = 150
+            });
+            dgvOrgUnit.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "UnitShortName",
+                DataPropertyName = "UnitShortName",
+                HeaderText = "单位简称",
+                Width = 100
+            });
+            dgvOrgUnit.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "UnitCode",
+                DataPropertyName = "UnitCode",
+                HeaderText = "单位编码",
+                Width = 100
+            });
+            dgvOrgUnit.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ParentId",
+                DataPropertyName = "ParentId",
+                HeaderText = "上级单位编号",
+                Width = 100
+            });
+            dgvOrgUnit.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "UnitType",
+                DataPropertyName = "UnitType",
+                HeaderText = "单位类型",
+                Width = 100
+            });
+            dgvOrgUnit.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Status",
+                DataPropertyName = "Status",
+                HeaderText = "状态",
+                Width = 60
+            });
+            dgvOrgUnit.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Remark",
+                DataPropertyName = "Remark",
+                HeaderText = "备注",
+                Width = 150
+            });
+            dgvOrgUnit.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CreateTime",
+                DataPropertyName = "CreateTime",
+                HeaderText = "创建时间",
+                Width = 140
+            });
+            
             dgvOrgUnit.DataSource = _orgUnits;
         }
 

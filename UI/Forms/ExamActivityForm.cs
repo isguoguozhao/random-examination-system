@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using 单位抽考win7软件.BLL.Services;
+using 单位抽考win7软件.Common;
 using 单位抽考win7软件.Common.Entities;
 
 namespace 单位抽考win7软件.UI.Forms
@@ -15,6 +16,7 @@ namespace 单位抽考win7软件.UI.Forms
         public ExamActivityForm()
         {
             InitializeComponent();
+            ModernTechTheme.ApplyTheme(this);
             _examService = new ExamService();
             LoadActivities();
         }
@@ -28,6 +30,116 @@ namespace 单位抽考win7软件.UI.Forms
         private void BindGrid()
         {
             dgvActivity.DataSource = null;
+            dgvActivity.AutoGenerateColumns = false;
+            dgvActivity.Columns.Clear();
+            
+            // 手动添加列并设置中文标题
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Id",
+                DataPropertyName = "Id",
+                HeaderText = "编号",
+                Width = 60
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ActivityName",
+                DataPropertyName = "ActivityName",
+                HeaderText = "活动名称",
+                Width = 150
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "BatchNo",
+                DataPropertyName = "BatchNo",
+                HeaderText = "批次号",
+                Width = 100
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Batch",
+                DataPropertyName = "Batch",
+                HeaderText = "批次",
+                Width = 100
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ExamDate",
+                DataPropertyName = "ExamDate",
+                HeaderText = "抽考日期",
+                Width = 120
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "DrawGroupCount",
+                DataPropertyName = "DrawGroupCount",
+                HeaderText = "抽指挥组数量",
+                Width = 120
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "DrawTaskCount",
+                DataPropertyName = "DrawTaskCount",
+                HeaderText = "抽任务数量",
+                Width = 100
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "DrawCount",
+                DataPropertyName = "DrawCount",
+                HeaderText = "抽选数量",
+                Width = 100
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "AllowRepeat",
+                DataPropertyName = "AllowRepeat",
+                HeaderText = "允许重复",
+                Width = 80
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "EnableMustHit",
+                DataPropertyName = "EnableMustHit",
+                HeaderText = "启用必抽",
+                Width = 80
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "EnableAvoidRecent",
+                DataPropertyName = "EnableAvoidRecent",
+                HeaderText = "启用近期回避",
+                Width = 100
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "AvoidDays",
+                DataPropertyName = "AvoidDays",
+                HeaderText = "回避天数",
+                Width = 80
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Status",
+                DataPropertyName = "Status",
+                HeaderText = "状态",
+                Width = 60
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CreatedBy",
+                DataPropertyName = "CreatedBy",
+                HeaderText = "创建人",
+                Width = 100
+            });
+            dgvActivity.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CreatedTime",
+                DataPropertyName = "CreatedTime",
+                HeaderText = "创建时间",
+                Width = 140
+            });
+            
             dgvActivity.DataSource = _activities;
         }
 

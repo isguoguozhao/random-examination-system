@@ -2,85 +2,135 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using 单位抽考win7软件.BLL.Services;
+using 单位抽考win7软件.Common;
 
 namespace 单位抽考win7软件.UI.Forms
 {
     public partial class MainForm : Form
     {
         private Timer _timer;
+        private Button _currentSelectedButton;
 
         public MainForm()
         {
             InitializeComponent();
-            InitializeLogo();
-            InitializeMdiBackground();
+            ApplyModernTechTheme();
+            InitializeNavigationMenu();
+            InitializeUserInfo();
             InitializeTimer();
             UpdateUserInfo();
             CheckPermissions();
         }
 
-        private void InitializeMdiBackground()
+        private void ApplyModernTechTheme()
         {
-            // 在窗体加载时设置MDI背景颜色
-            this.Load += MainForm_Load;
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            // 设置MDI背景为纯色，不显示任何图标
+            ModernTechTheme.ApplyTheme(this);
+            
             foreach (Control ctrl in this.Controls)
             {
                 if (ctrl is MdiClient mdiClient)
                 {
-                    mdiClient.BackColor = Color.FromArgb(230, 240, 210);
+                    mdiClient.BackColor = ModernTechTheme.BackgroundDeep;
                     break;
                 }
             }
         }
 
-        private void InitializeLogo()
+        private void InitializeNavigationMenu()
         {
-            try
+            int yPosition = 16;
+
+            AddMenuGroupLabel("基础数据", ref yPosition);
+            AddMenuItem("单位管理", menuOrgUnit_Click, ref yPosition);
+            AddMenuItem("人员管理", menuPerson_Click, ref yPosition);
+            AddMenuItem("指挥组管理", menuCommandGroup_Click, ref yPosition);
+            AddMenuItem("任务方案管理", menuTaskPlan_Click, ref yPosition);
+
+            AddMenuGroupLabel("抽考管理", ref yPosition);
+            AddMenuItem("抽考活动", menuExamActivity_Click, ref yPosition);
+
+            AddMenuGroupLabel("系统管理", ref yPosition, "menuSystemManage");
+            AddMenuItem("用户管理", menuUser_Click, ref yPosition);
+            AddMenuItem("必抽设置", menuMustHitRule_Click, ref yPosition);
+            AddMenuItem("操作日志", menuLog_Click, ref yPosition);
+            AddMenuItem("修改密码", menuChangePassword_Click, ref yPosition);
+            AddMenuItem("退出系统", menuExit_Click, ref yPosition);
+        }
+
+        private void AddMenuGroupLabel(string text, ref int yPosition, string name = "")
+        {
+            var label = new Label
             {
-                string logoPath = System.IO.Path.Combine(Application.StartupPath, "LOGO.png");
-                if (System.IO.File.Exists(logoPath))
+                Text = text,
+                Name = name,
+                ForeColor = ModernTechTheme.TextMuted,
+                Font = new Font("微软雅黑", 11F, FontStyle.Bold),
+                AutoSize = true,
+                Left = 20,
+                Top = yPosition
+            };
+            panelNavContent.Controls.Add(label);
+            yPosition += 36;
+        }
+
+        private void AddMenuItem(string text, EventHandler clickHandler, ref int yPosition)
+        {
+            var btn = new Button
+            {
+                Text = text,
+                Width = 228,
+                Height = 48,
+                Left = 16,
+                Top = yPosition,
+                BackColor = Color.Transparent,
+                ForeColor = ModernTechTheme.TextPrimary,
+                Font = new Font("微软雅黑", 12F, FontStyle.Regular),
+                FlatStyle = FlatStyle.Flat,
+                Cursor = Cursors.Hand,
+                TextAlign = ContentAlignment.MiddleLeft,
+                Padding = new Padding(24, 0, 0, 0)
+            };
+            btn.FlatAppearance.BorderSize = 0;
+
+            btn.MouseEnter += (s, e) =&gt;
+            {
+                if (btn != _currentSelectedButton)
                 {
-                    // 创建LOGO面板
-                    panelLogo = new Panel();
-                    panelLogo.Dock = DockStyle.Top;
-                    panelLogo.Height = 80;
-                    panelLogo.BackColor = Color.FromArgb(200, 220, 180);
-
-                    // 创建LOGO图片框
-                    picLogo = new PictureBox();
-                    picLogo.SizeMode = PictureBoxSizeMode.Zoom;
-                    picLogo.Height = 70;
-                    picLogo.Width = 70;
-                    picLogo.Top = 5;
-                    picLogo.Left = 10;
-                    picLogo.Image = Image.FromFile(logoPath);
-
-                    // 创建系统名称标签
-                    Label lblSystemName = new Label();
-                    lblSystemName.Text = "单位抽考系统";
-                    lblSystemName.Font = new Font("微软雅黑", 16, FontStyle.Bold);
-                    lblSystemName.AutoSize = true;
-                    lblSystemName.Left = 90;
-                    lblSystemName.Top = 25;
-                    lblSystemName.ForeColor = Color.FromArgb(80, 100, 60);
-
-                    panelLogo.Controls.Add(picLogo);
-                    panelLogo.Controls.Add(lblSystemName);
-
-                    // 将LOGO面板插入到菜单栏和工具栏之间
-                    this.Controls.Add(panelLogo);
-                    this.Controls.SetChildIndex(panelLogo, this.Controls.Count - 2);
+                    btn.BackColor = Color.FromArgb(51, 65, 85);
+                    btn.ForeColor = ModernTechTheme.CyanBright;
                 }
-            }
-            catch (Exception ex)
+            };
+
+            btn.MouseLeave += (s, e) =&gt;
             {
-                System.Diagnostics.Debug.WriteLine($"加载LOGO失败: {ex.Message}");
-            }
+                if (btn != _currentSelectedButton)
+                {
+                    btn.BackColor = Color.Transparent;
+                    btn.ForeColor = ModernTechTheme.TextPrimary;
+                }
+            };
+
+            btn.Click += (s, e) =&gt;
+            {
+                if (_currentSelectedButton != null)
+                {
+                    _currentSelectedButton.BackColor = Color.Transparent;
+                    _currentSelectedButton.ForeColor = ModernTechTheme.TextPrimary;
+                }
+                _currentSelectedButton = btn;
+                btn.BackColor = ModernTechTheme.CyanEnd;
+                btn.ForeColor = Color.White;
+                clickHandler?.Invoke(s, e);
+            };
+
+            panelNavContent.Controls.Add(btn);
+            yPosition += 56;
+        }
+
+        private void InitializeUserInfo()
+        {
+            lblCurrentUser.Parent = panelUserInfo;
+            lblCurrentTime.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         }
 
         private void InitializeTimer()
@@ -99,14 +149,14 @@ namespace 单位抽考win7软件.UI.Forms
 
         private void UpdateTime()
         {
-            lblTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            lblCurrentTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         private void UpdateUserInfo()
         {
             if (CurrentUser.IsLoggedIn)
             {
-                lblUserInfo.Text = $"当前用户：{CurrentUser.UserName} ({CurrentUser.RoleName})";
+                lblCurrentUser.Text = $"当前用户：{CurrentUser.UserName} ({CurrentUser.RoleName})";
             }
         }
 
@@ -114,7 +164,14 @@ namespace 单位抽考win7软件.UI.Forms
         {
             if (!CurrentUser.IsAdmin)
             {
-                menuSystemManage.Visible = false;
+                foreach (Control ctrl in panelNavContent.Controls)
+                {
+                    if (ctrl.Name == "menuSystemManage" || 
+                        (ctrl is Button btn &amp;&amp; (btn.Text == "用户管理" || btn.Text == "必抽设置" || btn.Text == "操作日志")))
+                    {
+                        ctrl.Visible = false;
+                    }
+                }
             }
         }
 

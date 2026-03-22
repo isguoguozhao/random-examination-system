@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using 单位抽考win7软件.BLL.Services;
+using 单位抽考win7软件.Common;
 using 单位抽考win7软件.Common.Entities;
 
 namespace 单位抽考win7软件.UI.Forms
@@ -17,6 +18,7 @@ namespace 单位抽考win7软件.UI.Forms
         public PersonForm()
         {
             InitializeComponent();
+            ModernTechTheme.ApplyTheme(this);
             _personService = new PersonService();
             _orgUnitService = new OrgUnitService();
             LoadOrgUnits();
@@ -42,6 +44,74 @@ namespace 单位抽考win7软件.UI.Forms
         private void BindGrid()
         {
             dgvPerson.DataSource = null;
+            dgvPerson.AutoGenerateColumns = false;
+            dgvPerson.Columns.Clear();
+            
+            // 手动添加列并设置中文标题
+            dgvPerson.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Id",
+                DataPropertyName = "Id",
+                HeaderText = "编号",
+                Width = 60
+            });
+            dgvPerson.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Name",
+                DataPropertyName = "Name",
+                HeaderText = "姓名",
+                Width = 100
+            });
+            dgvPerson.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Gender",
+                DataPropertyName = "Gender",
+                HeaderText = "性别",
+                Width = 60
+            });
+            dgvPerson.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "UnitId",
+                DataPropertyName = "UnitId",
+                HeaderText = "单位编号",
+                Width = 80
+            });
+            dgvPerson.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "PostName",
+                DataPropertyName = "PostName",
+                HeaderText = "部职别",
+                Width = 120
+            });
+            dgvPerson.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "RoleType",
+                DataPropertyName = "RoleType",
+                HeaderText = "角色类型",
+                Width = 100
+            });
+            dgvPerson.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Phone",
+                DataPropertyName = "Phone",
+                HeaderText = "电话",
+                Width = 120
+            });
+            dgvPerson.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Status",
+                DataPropertyName = "Status",
+                HeaderText = "状态",
+                Width = 60
+            });
+            dgvPerson.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Remark",
+                DataPropertyName = "Remark",
+                HeaderText = "备注",
+                Width = 150
+            });
+            
             dgvPerson.DataSource = _persons;
         }
 

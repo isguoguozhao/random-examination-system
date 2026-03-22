@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using 单位抽考win7软件.BLL.Services;
+using 单位抽考win7软件.Common;
 using 单位抽考win7软件.Common.Entities;
 
 namespace 单位抽考win7软件.UI.Forms
@@ -18,6 +19,7 @@ namespace 单位抽考win7软件.UI.Forms
         public ExamResultForm(ExamActivity activity)
         {
             InitializeComponent();
+            ModernTechTheme.ApplyTheme(this);
             _examService = new ExamService();
             _activity = activity;
             LoadResults();
@@ -37,18 +39,187 @@ namespace 单位抽考win7软件.UI.Forms
         private void BindGroupResults()
         {
             dgvGroupResult.DataSource = null;
+            dgvGroupResult.AutoGenerateColumns = false;
+            dgvGroupResult.Columns.Clear();
+            
+            // 手动添加列并设置中文标题
+            dgvGroupResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Id",
+                DataPropertyName = "Id",
+                HeaderText = "编号",
+                Width = 60
+            });
+            dgvGroupResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ActivityId",
+                DataPropertyName = "ActivityId",
+                HeaderText = "活动编号",
+                Width = 80
+            });
+            dgvGroupResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CommandGroupId",
+                DataPropertyName = "CommandGroupId",
+                HeaderText = "指挥组编号",
+                Width = 100
+            });
+            dgvGroupResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "GroupName",
+                DataPropertyName = "GroupName",
+                HeaderText = "指挥组名称",
+                Width = 150
+            });
+            dgvGroupResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "IsHit",
+                DataPropertyName = "IsHit",
+                HeaderText = "是否抽中",
+                Width = 80
+            });
+            dgvGroupResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "HitOrder",
+                DataPropertyName = "HitOrder",
+                HeaderText = "抽中顺序",
+                Width = 80
+            });
+            dgvGroupResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CreateTime",
+                DataPropertyName = "CreateTime",
+                HeaderText = "创建时间",
+                Width = 140
+            });
+            
             dgvGroupResult.DataSource = _groupResults;
         }
 
         private void BindTaskResults()
         {
             dgvTaskResult.DataSource = null;
+            dgvTaskResult.AutoGenerateColumns = false;
+            dgvTaskResult.Columns.Clear();
+            
+            // 手动添加列并设置中文标题
+            dgvTaskResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Id",
+                DataPropertyName = "Id",
+                HeaderText = "编号",
+                Width = 60
+            });
+            dgvTaskResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ActivityId",
+                DataPropertyName = "ActivityId",
+                HeaderText = "活动编号",
+                Width = 80
+            });
+            dgvTaskResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TaskPlanId",
+                DataPropertyName = "TaskPlanId",
+                HeaderText = "任务方案编号",
+                Width = 100
+            });
+            dgvTaskResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TaskName",
+                DataPropertyName = "TaskName",
+                HeaderText = "任务名称",
+                Width = 150
+            });
+            dgvTaskResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "IsHit",
+                DataPropertyName = "IsHit",
+                HeaderText = "是否抽中",
+                Width = 80
+            });
+            dgvTaskResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "HitOrder",
+                DataPropertyName = "HitOrder",
+                HeaderText = "抽中顺序",
+                Width = 80
+            });
+            dgvTaskResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CreateTime",
+                DataPropertyName = "CreateTime",
+                HeaderText = "创建时间",
+                Width = 140
+            });
+            
             dgvTaskResult.DataSource = _taskResults;
         }
 
         private void BindFinalResults()
         {
             dgvFinalResult.DataSource = null;
+            dgvFinalResult.AutoGenerateColumns = false;
+            dgvFinalResult.Columns.Clear();
+            
+            // 手动添加列并设置中文标题
+            dgvFinalResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Id",
+                DataPropertyName = "Id",
+                HeaderText = "编号",
+                Width = 60
+            });
+            dgvFinalResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ActivityId",
+                DataPropertyName = "ActivityId",
+                HeaderText = "活动编号",
+                Width = 80
+            });
+            dgvFinalResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Content1TaskName",
+                DataPropertyName = "Content1TaskName",
+                HeaderText = "考核内容1任务",
+                Width = 150
+            });
+            dgvFinalResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Content1CommanderName",
+                DataPropertyName = "Content1CommanderName",
+                HeaderText = "考核内容1指挥员",
+                Width = 150
+            });
+            dgvFinalResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Content2TaskName",
+                DataPropertyName = "Content2TaskName",
+                HeaderText = "考核内容2任务",
+                Width = 150
+            });
+            dgvFinalResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Content2CommanderName",
+                DataPropertyName = "Content2CommanderName",
+                HeaderText = "考核内容2指挥员",
+                Width = 150
+            });
+            dgvFinalResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "DrawTime",
+                DataPropertyName = "DrawTime",
+                HeaderText = "抽考时间",
+                Width = 140
+            });
+            dgvFinalResult.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CreateTime",
+                DataPropertyName = "CreateTime",
+                HeaderText = "创建时间",
+                Width = 140
+            });
+            
             dgvFinalResult.DataSource = _finalResults;
         }
 

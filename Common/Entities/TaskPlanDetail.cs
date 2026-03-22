@@ -1,7 +1,7 @@
 namespace 单位抽考win7软件.Common.Entities
 {
     /// <summary>
-    /// 任务方案明细实体
+    /// 任务方案明细实体（简化版 - 仅保留任务名称和分配单位）
     /// </summary>
     public class TaskPlanDetail
     {
@@ -29,16 +29,6 @@ namespace 单位抽考win7软件.Common.Entities
         /// 单位名称（别名）
         /// </summary>
         public string OrgUnitName { get { return UnitName; } set { UnitName = value; } }
-
-        /// <summary>
-        /// 任务描述
-        /// </summary>
-        public string TaskDesc { get; set; }
-
-        /// <summary>
-        /// 任务描述（别名）
-        /// </summary>
-        public string TaskDescription { get { return TaskDesc; } set { TaskDesc = value; } }
 
         /// <summary>
         /// 排序号

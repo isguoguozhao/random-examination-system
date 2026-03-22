@@ -150,12 +150,11 @@ namespace 单位抽考win7软件.DAL
                     CreateTime DATETIME DEFAULT CURRENT_TIMESTAMP
                 )",
 
-                // 9. 任务方案明细表 TaskPlanDetail
+                // 9. 任务方案明细表 TaskPlanDetail（简化版 - 仅保留单位信息）
                 @"CREATE TABLE IF NOT EXISTS TaskPlanDetail (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
                     TaskPlanId INTEGER NOT NULL,
                     UnitName VARCHAR(200),
-                    TaskDesc VARCHAR(500),
                     SortNo INTEGER DEFAULT 0,
                     FOREIGN KEY (TaskPlanId) REFERENCES TaskPlan(Id)
                 )",

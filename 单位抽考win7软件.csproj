@@ -169,6 +169,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Forms\ExamDrawForm.Designer.cs" />
+    <Compile Include="UI\Forms\NewExamDrawForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\NewExamDrawForm.Designer.cs" />
+    <Compile Include="Common\SunnyUITheme.cs" />
+    <Compile Include="Common\ModernTechTheme.cs" />
     <Compile Include="UI\Forms\ExamResultForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\NewExamDrawForm.resx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

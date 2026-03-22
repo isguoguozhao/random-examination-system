@@ -23,8 +23,6 @@ namespace 单位抽考win7软件.UI.Forms
             this.panelDetail = new System.Windows.Forms.Panel();
             this.btnRemoveDetail = new System.Windows.Forms.Button();
             this.btnAddDetail = new System.Windows.Forms.Button();
-            this.txtTask = new System.Windows.Forms.TextBox();
-            this.lblTask = new System.Windows.Forms.Label();
             this.cmbOrgUnit = new System.Windows.Forms.ComboBox();
             this.lblOrgUnit = new System.Windows.Forms.Label();
             this.dgvDetails = new System.Windows.Forms.DataGridView();
@@ -40,7 +38,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // panelBasic
             // 
-            this.panelBasic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(200)))));
+            this.panelBasic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(220)))));
             this.panelBasic.Controls.Add(this.txtDescription);
             this.panelBasic.Controls.Add(this.lblDescription);
             this.panelBasic.Controls.Add(this.txtPlanName);
@@ -90,11 +88,9 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // panelDetail
             // 
-            this.panelDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(210)))));
+            this.panelDetail.BackColor = System.Drawing.Color.White;
             this.panelDetail.Controls.Add(this.btnRemoveDetail);
             this.panelDetail.Controls.Add(this.btnAddDetail);
-            this.panelDetail.Controls.Add(this.txtTask);
-            this.panelDetail.Controls.Add(this.lblTask);
             this.panelDetail.Controls.Add(this.cmbOrgUnit);
             this.panelDetail.Controls.Add(this.lblOrgUnit);
             this.panelDetail.Controls.Add(this.dgvDetails);
@@ -107,13 +103,13 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // btnRemoveDetail
             // 
-            this.btnRemoveDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnRemoveDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnRemoveDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveDetail.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnRemoveDetail.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnRemoveDetail.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveDetail.Location = new System.Drawing.Point(600, 100);
+            this.btnRemoveDetail.Location = new System.Drawing.Point(600, 60);
             this.btnRemoveDetail.Name = "btnRemoveDetail";
-            this.btnRemoveDetail.Size = new System.Drawing.Size(80, 30);
+            this.btnRemoveDetail.Size = new System.Drawing.Size(80, 40);
             this.btnRemoveDetail.TabIndex = 7;
             this.btnRemoveDetail.Text = "移除";
             this.btnRemoveDetail.UseVisualStyleBackColor = false;
@@ -121,35 +117,17 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // btnAddDetail
             // 
-            this.btnAddDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(120)))));
+            this.btnAddDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.btnAddDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddDetail.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnAddDetail.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnAddDetail.ForeColor = System.Drawing.Color.White;
-            this.btnAddDetail.Location = new System.Drawing.Point(600, 60);
+            this.btnAddDetail.Location = new System.Drawing.Point(600, 15);
             this.btnAddDetail.Name = "btnAddDetail";
-            this.btnAddDetail.Size = new System.Drawing.Size(80, 30);
+            this.btnAddDetail.Size = new System.Drawing.Size(80, 40);
             this.btnAddDetail.TabIndex = 6;
             this.btnAddDetail.Text = "添加";
             this.btnAddDetail.UseVisualStyleBackColor = false;
             this.btnAddDetail.Click += new System.EventHandler(this.btnAddDetail_Click);
-            // 
-            // txtTask
-            // 
-            this.txtTask.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtTask.Location = new System.Drawing.Point(100, 65);
-            this.txtTask.Name = "txtTask";
-            this.txtTask.Size = new System.Drawing.Size(400, 23);
-            this.txtTask.TabIndex = 5;
-            // 
-            // lblTask
-            // 
-            this.lblTask.AutoSize = true;
-            this.lblTask.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblTask.Location = new System.Drawing.Point(20, 68);
-            this.lblTask.Name = "lblTask";
-            this.lblTask.Size = new System.Drawing.Size(68, 17);
-            this.lblTask.TabIndex = 4;
-            this.lblTask.Text = "担负任务：";
             // 
             // cmbOrgUnit
             // 
@@ -178,13 +156,13 @@ namespace 单位抽考win7软件.UI.Forms
             this.dgvDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetails.BackgroundColor = System.Drawing.Color.White;
             this.dgvDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetails.Location = new System.Drawing.Point(20, 140);
+            this.dgvDetails.Location = new System.Drawing.Point(20, 110);
             this.dgvDetails.MultiSelect = false;
             this.dgvDetails.Name = "dgvDetails";
             this.dgvDetails.ReadOnly = true;
             this.dgvDetails.RowTemplate.Height = 23;
             this.dgvDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetails.Size = new System.Drawing.Size(660, 150);
+            this.dgvDetails.Size = new System.Drawing.Size(660, 180);
             this.dgvDetails.TabIndex = 1;
             // 
             // lblDetails
@@ -199,7 +177,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // panelBottom
             // 
-            this.panelBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(180)))));
+            this.panelBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(220)))));
             this.panelBottom.Controls.Add(this.btnCancel);
             this.panelBottom.Controls.Add(this.btnSave);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -210,13 +188,13 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btnCancel.BackColor = System.Drawing.Color.Gray;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCancel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(370, 10);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(90, 30);
+            this.btnCancel.Size = new System.Drawing.Size(100, 40);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -224,13 +202,13 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(120)))));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSave.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(240, 10);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(90, 30);
+            this.btnSave.Size = new System.Drawing.Size(100, 40);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -240,7 +218,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(210)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(700, 450);
             this.Controls.Add(this.panelDetail);
             this.Controls.Add(this.panelBottom);
@@ -274,8 +252,6 @@ namespace 单位抽考win7软件.UI.Forms
         private System.Windows.Forms.DataGridView dgvDetails;
         private System.Windows.Forms.ComboBox cmbOrgUnit;
         private System.Windows.Forms.Label lblOrgUnit;
-        private System.Windows.Forms.TextBox txtTask;
-        private System.Windows.Forms.Label lblTask;
         private System.Windows.Forms.Button btnAddDetail;
         private System.Windows.Forms.Button btnRemoveDetail;
         private System.Windows.Forms.Panel panelBottom;

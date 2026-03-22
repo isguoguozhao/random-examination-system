@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using 单位抽考win7软件.BLL.Services;
+using 单位抽考win7软件.Common;
 using 单位抽考win7软件.Common.Entities;
 
 namespace 单位抽考win7软件.UI.Forms
@@ -17,6 +18,7 @@ namespace 单位抽考win7软件.UI.Forms
         public CommandGroupForm()
         {
             InitializeComponent();
+            ModernTechTheme.ApplyTheme(this);
             _commandGroupService = new CommandGroupService();
             _orgUnitService = new OrgUnitService();
             LoadOrgUnits();
@@ -42,6 +44,81 @@ namespace 单位抽考win7软件.UI.Forms
         private void BindGrid()
         {
             dgvCommandGroup.DataSource = null;
+            dgvCommandGroup.AutoGenerateColumns = false;
+            dgvCommandGroup.Columns.Clear();
+            
+            // 手动添加列并设置中文标题
+            dgvCommandGroup.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Id",
+                DataPropertyName = "Id",
+                HeaderText = "编号",
+                Width = 60
+            });
+            dgvCommandGroup.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "GroupName",
+                DataPropertyName = "GroupName",
+                HeaderText = "指挥组名称",
+                Width = 150
+            });
+            dgvCommandGroup.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "GroupCode",
+                DataPropertyName = "GroupCode",
+                HeaderText = "指挥组代码",
+                Width = 100
+            });
+            dgvCommandGroup.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "UnitId",
+                DataPropertyName = "UnitId",
+                HeaderText = "单位编号",
+                Width = 80
+            });
+            dgvCommandGroup.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "GroupNo",
+                DataPropertyName = "GroupNo",
+                HeaderText = "指挥组编号",
+                Width = 100
+            });
+            dgvCommandGroup.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Status",
+                DataPropertyName = "Status",
+                HeaderText = "状态",
+                Width = 60
+            });
+            dgvCommandGroup.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "IsActive",
+                DataPropertyName = "IsActive",
+                HeaderText = "是否启用",
+                Width = 80
+            });
+            dgvCommandGroup.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CanDraw",
+                DataPropertyName = "CanDraw",
+                HeaderText = "是否可抽",
+                Width = 80
+            });
+            dgvCommandGroup.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Remark",
+                DataPropertyName = "Remark",
+                HeaderText = "备注",
+                Width = 150
+            });
+            dgvCommandGroup.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CreateTime",
+                DataPropertyName = "CreateTime",
+                HeaderText = "创建时间",
+                Width = 140
+            });
+            
             dgvCommandGroup.DataSource = _commandGroups;
         }
 

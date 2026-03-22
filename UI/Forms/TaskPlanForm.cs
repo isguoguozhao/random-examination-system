@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using 单位抽考win7软件.BLL.Services;
+using 单位抽考win7软件.Common;
 using 单位抽考win7软件.Common.Entities;
 
 namespace 单位抽考win7软件.UI.Forms
@@ -15,6 +16,7 @@ namespace 单位抽考win7软件.UI.Forms
         public TaskPlanForm()
         {
             InitializeComponent();
+            ModernTechTheme.ApplyTheme(this);
             _taskPlanService = new TaskPlanService();
             LoadTaskPlans();
         }
@@ -28,6 +30,67 @@ namespace 单位抽考win7软件.UI.Forms
         private void BindGrid()
         {
             dgvTaskPlan.DataSource = null;
+            dgvTaskPlan.AutoGenerateColumns = false;
+            dgvTaskPlan.Columns.Clear();
+            
+            // 手动添加列并设置中文标题
+            dgvTaskPlan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Id",
+                DataPropertyName = "Id",
+                HeaderText = "编号",
+                Width = 60
+            });
+            dgvTaskPlan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TaskName",
+                DataPropertyName = "TaskName",
+                HeaderText = "任务名称",
+                Width = 150
+            });
+            dgvTaskPlan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ExamContent",
+                DataPropertyName = "ExamContent",
+                HeaderText = "考核内容",
+                Width = 200
+            });
+            dgvTaskPlan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TaskType",
+                DataPropertyName = "TaskType",
+                HeaderText = "任务类型",
+                Width = 100
+            });
+            dgvTaskPlan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "DifficultyLevel",
+                DataPropertyName = "DifficultyLevel",
+                HeaderText = "难度等级",
+                Width = 100
+            });
+            dgvTaskPlan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Status",
+                DataPropertyName = "Status",
+                HeaderText = "状态",
+                Width = 60
+            });
+            dgvTaskPlan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CanDraw",
+                DataPropertyName = "CanDraw",
+                HeaderText = "是否可抽",
+                Width = 80
+            });
+            dgvTaskPlan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Remark",
+                DataPropertyName = "Remark",
+                HeaderText = "备注",
+                Width = 150
+            });
+            
             dgvTaskPlan.DataSource = _taskPlans;
         }
 

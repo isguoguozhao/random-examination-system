@@ -165,14 +165,13 @@ namespace 单位抽考win7软件.BLL.Services
         /// </summary>
         public int AddDetail(TaskPlanDetail detail)
         {
-            string sql = @"INSERT INTO TaskPlanDetail (TaskPlanId, UnitName, TaskDesc, SortNo)
-                           VALUES (@TaskPlanId, @UnitName, @TaskDesc, @SortNo)";
+            string sql = @"INSERT INTO TaskPlanDetail (TaskPlanId, UnitName, SortNo)
+                           VALUES (@TaskPlanId, @UnitName, @SortNo)";
 
             SQLiteParameter[] parameters = new SQLiteParameter[]
             {
                 SQLiteHelper.CreateParameter("@TaskPlanId", detail.TaskPlanId),
                 SQLiteHelper.CreateParameter("@UnitName", detail.UnitName),
-                SQLiteHelper.CreateParameter("@TaskDesc", detail.TaskDesc),
                 SQLiteHelper.CreateParameter("@SortNo", detail.SortNo)
             };
 
@@ -309,7 +308,6 @@ namespace 单位抽考win7软件.BLL.Services
                 Id = Convert.ToInt32(row["Id"]),
                 TaskPlanId = Convert.ToInt32(row["TaskPlanId"]),
                 UnitName = row["UnitName"] != DBNull.Value ? row["UnitName"].ToString() : null,
-                TaskDesc = row["TaskDesc"] != DBNull.Value ? row["TaskDesc"].ToString() : null,
                 SortNo = Convert.ToInt32(row["SortNo"])
             };
         }

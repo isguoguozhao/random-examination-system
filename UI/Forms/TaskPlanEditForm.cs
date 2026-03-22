@@ -66,22 +66,14 @@ namespace 单位抽考win7软件.UI.Forms
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtTask.Text.Trim()))
-            {
-                MessageBox.Show("请输入担负任务！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             var detail = new TaskPlanDetail
             {
                 OrgUnitId = (int)cmbOrgUnit.SelectedValue,
-                OrgUnitName = ((OrgUnit)cmbOrgUnit.SelectedItem).UnitName,
-                TaskDescription = txtTask.Text.Trim()
+                OrgUnitName = ((OrgUnit)cmbOrgUnit.SelectedItem).UnitName
             };
 
             _details.Add(detail);
             BindDetailsGrid();
-            txtTask.Clear();
         }
 
         private void btnRemoveDetail_Click(object sender, EventArgs e)
