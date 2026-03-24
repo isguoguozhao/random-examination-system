@@ -38,6 +38,7 @@ namespace 单位抽考win7软件.DAL
                 }
 
                 CreateTables();
+                UpgradeDatabase();
                 InsertDefaultData();
             }
             catch (Exception ex)
@@ -202,8 +203,13 @@ namespace 单位抽考win7软件.DAL
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
                     ActivityId INTEGER NOT NULL,
                     SortNo INTEGER DEFAULT 0,
-                    GroupResultId INTEGER NOT NULL,
-                    TaskResultId INTEGER NOT NULL,
+                    GroupResultId INTEGER DEFAULT 0,
+                    TaskResultId INTEGER DEFAULT 0,
+                    Content1TaskName VARCHAR(500),
+                    Content1CommanderName VARCHAR(200),
+                    Content2TaskName VARCHAR(500),
+                    Content2CommanderName VARCHAR(200),
+                    DrawTime DATETIME,
                     CreateTime DATETIME DEFAULT CURRENT_TIMESTAMP,
                     FOREIGN KEY (ActivityId) REFERENCES ExamActivity(Id),
                     FOREIGN KEY (GroupResultId) REFERENCES ExamActivityGroupResult(Id),
@@ -376,6 +382,35 @@ namespace 单位抽考win7软件.DAL
                         throw;
                     }
                 }
+            }
+        }
+
+        private static void UpgradeDatabase()
+        {
+            try
+            {
+                string[] alterTableSqls = new string[]
+                {
+                    "ALTER TABLE ExamActivityFinalResult ADD COLUMN Content1TaskName VARCHAR(500)",
+                    "ALTER TABLE ExamActivityFinalResult ADD COLUMN Content1CommanderName VARCHAR(200)",
+                    "ALTER TABLE ExamActivityFinalResult ADD COLUMN Content2TaskName VARCHAR(500)",
+                    "ALTER TABLE ExamActivityFinalResult ADD COLUMN Content2CommanderName VARCHAR(200)",
+                    "ALTER TABLE ExamActivityFinalResult ADD COLUMN DrawTime DATETIME"
+                };
+
+                foreach (string sql in alterTableSqls)
+                {
+                    try
+                    {
+                        SQLiteHelper.ExecuteNonQuery(sql);
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            catch
+            {
             }
         }
 

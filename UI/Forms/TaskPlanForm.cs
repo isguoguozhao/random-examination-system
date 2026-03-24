@@ -16,7 +16,6 @@ namespace 单位抽考win7软件.UI.Forms
         public TaskPlanForm()
         {
             InitializeComponent();
-            ModernTechTheme.ApplyTheme(this);
             _taskPlanService = new TaskPlanService();
             LoadTaskPlans();
         }

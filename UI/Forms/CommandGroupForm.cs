@@ -18,7 +18,6 @@ namespace 单位抽考win7软件.UI.Forms
         public CommandGroupForm()
         {
             InitializeComponent();
-            ModernTechTheme.ApplyTheme(this);
             _commandGroupService = new CommandGroupService();
             _orgUnitService = new OrgUnitService();
             LoadOrgUnits();

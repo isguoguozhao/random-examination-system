@@ -149,28 +149,45 @@ namespace 单位抽考win7软件.BLL.Services
         }
 
         /// <summary>
-        /// 删除单位（逻辑删除）
+        /// 删除单位（逻辑删除，级联删除所有子单位）
         /// </summary>
         public bool Delete(int id)
         {
-            // 检查是否有子单位
-            string checkSql = "SELECT COUNT(*) FROM OrgUnit WHERE ParentId = @ParentId AND Status = 1";
-            object result = SQLiteHelper.ExecuteScalar(checkSql, new SQLiteParameter[]
-            {
-                SQLiteHelper.CreateParameter("@ParentId", id)
-            });
+            // 先递归删除所有子单位
+            DeleteChildrenRecursive(id);
 
-            if (Convert.ToInt32(result) > 0)
-            {
-                throw new Exception("该单位下存在子单位，无法删除");
-            }
-
-            // 逻辑删除
+            // 逻辑删除当前单位
             string sql = "UPDATE OrgUnit SET Status = 0 WHERE Id = @Id";
             return SQLiteHelper.ExecuteNonQuery(sql, new SQLiteParameter[]
             {
                 SQLiteHelper.CreateParameter("@Id", id)
             }) > 0;
+        }
+
+        /// <summary>
+        /// 递归删除子单位
+        /// </summary>
+        private void DeleteChildrenRecursive(int parentId)
+        {
+            // 获取所有子单位
+            string getChildrenSql = "SELECT Id FROM OrgUnit WHERE ParentId = @ParentId AND Status = 1";
+            DataTable dt = SQLiteHelper.ExecuteDataTable(getChildrenSql, new SQLiteParameter[]
+            {
+                SQLiteHelper.CreateParameter("@ParentId", parentId)
+            });
+
+            foreach (DataRow row in dt.Rows)
+            {
+                int childId = Convert.ToInt32(row["Id"]);
+                // 递归删除子单位的子单位
+                DeleteChildrenRecursive(childId);
+                // 逻辑删除子单位
+                string deleteSql = "UPDATE OrgUnit SET Status = 0 WHERE Id = @Id";
+                SQLiteHelper.ExecuteNonQuery(deleteSql, new SQLiteParameter[]
+                {
+                    SQLiteHelper.CreateParameter("@Id", childId)
+                });
+            }
         }
 
         /// <summary>

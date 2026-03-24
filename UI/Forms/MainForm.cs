@@ -14,26 +14,11 @@ namespace 单位抽考win7软件.UI.Forms
         public MainForm()
         {
             InitializeComponent();
-            ApplyModernTechTheme();
             InitializeNavigationMenu();
             InitializeUserInfo();
             InitializeTimer();
             UpdateUserInfo();
             CheckPermissions();
-        }
-
-        private void ApplyModernTechTheme()
-        {
-            ModernTechTheme.ApplyTheme(this);
-            
-            foreach (Control ctrl in this.Controls)
-            {
-                if (ctrl is MdiClient mdiClient)
-                {
-                    mdiClient.BackColor = ModernTechTheme.BackgroundDeep;
-                    break;
-                }
-            }
         }
 
         private void InitializeNavigationMenu()
@@ -63,7 +48,7 @@ namespace 单位抽考win7软件.UI.Forms
             {
                 Text = text,
                 Name = name,
-                ForeColor = ModernTechTheme.TextMuted,
+                ForeColor = Color.Gray,
                 Font = new Font("微软雅黑", 11F, FontStyle.Bold),
                 AutoSize = true,
                 Left = 20,
@@ -83,44 +68,19 @@ namespace 单位抽考win7软件.UI.Forms
                 Left = 16,
                 Top = yPosition,
                 BackColor = Color.Transparent,
-                ForeColor = ModernTechTheme.TextPrimary,
+                ForeColor = Color.Black,
                 Font = new Font("微软雅黑", 12F, FontStyle.Regular),
-                FlatStyle = FlatStyle.Flat,
                 Cursor = Cursors.Hand,
                 TextAlign = ContentAlignment.MiddleLeft,
                 Padding = new Padding(24, 0, 0, 0)
             };
-            btn.FlatAppearance.BorderSize = 0;
 
-            btn.MouseEnter += (s, e) =&gt;
+            btn.Click += delegate (object sender, EventArgs e)
             {
-                if (btn != _currentSelectedButton)
+                if (clickHandler != null)
                 {
-                    btn.BackColor = Color.FromArgb(51, 65, 85);
-                    btn.ForeColor = ModernTechTheme.CyanBright;
+                    clickHandler(sender, e);
                 }
-            };
-
-            btn.MouseLeave += (s, e) =&gt;
-            {
-                if (btn != _currentSelectedButton)
-                {
-                    btn.BackColor = Color.Transparent;
-                    btn.ForeColor = ModernTechTheme.TextPrimary;
-                }
-            };
-
-            btn.Click += (s, e) =&gt;
-            {
-                if (_currentSelectedButton != null)
-                {
-                    _currentSelectedButton.BackColor = Color.Transparent;
-                    _currentSelectedButton.ForeColor = ModernTechTheme.TextPrimary;
-                }
-                _currentSelectedButton = btn;
-                btn.BackColor = ModernTechTheme.CyanEnd;
-                btn.ForeColor = Color.White;
-                clickHandler?.Invoke(s, e);
             };
 
             panelNavContent.Controls.Add(btn);
@@ -167,7 +127,7 @@ namespace 单位抽考win7软件.UI.Forms
                 foreach (Control ctrl in panelNavContent.Controls)
                 {
                     if (ctrl.Name == "menuSystemManage" || 
-                        (ctrl is Button btn &amp;&amp; (btn.Text == "用户管理" || btn.Text == "必抽设置" || btn.Text == "操作日志")))
+                        (ctrl is Button btn && (btn.Text == "用户管理" || btn.Text == "必抽设置" || btn.Text == "操作日志")))
                     {
                         ctrl.Visible = false;
                     }

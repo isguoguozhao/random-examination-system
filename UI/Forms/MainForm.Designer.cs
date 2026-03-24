@@ -6,7 +6,7 @@ namespace 单位抽考win7软件.UI.Forms
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing &amp;&amp; (components != null))
+            if (disposing && (components != null))
             {
                 components.Dispose();
             }
@@ -24,7 +24,6 @@ namespace 单位抽考win7软件.UI.Forms
             this.panelNavContent = new System.Windows.Forms.Panel();
             this.panelNavHeader = new System.Windows.Forms.Panel();
             this.lblNavTitle = new System.Windows.Forms.Label();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.panelTop.SuspendLayout();
             this.panelLeftNav.SuspendLayout();
             this.panelNavHeader.SuspendLayout();
@@ -108,19 +107,12 @@ namespace 单位抽考win7软件.UI.Forms
             this.lblNavTitle.Name = "lblNavTitle";
             this.lblNavTitle.Text = "导航菜单";
             // 
-            // panelMain
-            // 
-            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Name = "panelMain";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1280, 800);
-            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelLeftNav);
             this.Controls.Add(this.panelTop);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -148,6 +140,5 @@ namespace 单位抽考win7软件.UI.Forms
         private System.Windows.Forms.Panel panelNavContent;
         private System.Windows.Forms.Panel panelNavHeader;
         private System.Windows.Forms.Label lblNavTitle;
-        private System.Windows.Forms.Panel panelMain;
     }
 }

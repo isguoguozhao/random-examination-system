@@ -32,16 +32,25 @@ Name: "chinesesimplified"; MessagesFile: "compiler:Languages\ChineseSimplified.i
 Source: "bin\Release\单位抽考win7软件.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; DLL文件
 Source: "bin\Release\*.dll"; DestDir: "{app}"; Flags: ignoreversion
+; XML文档文件
+Source: "bin\Release\*.xml"; DestDir: "{app}"; Flags: ignoreversion
 ; SQLite原生库 (x86)
-Source: "bin\Release\x86\SQLite.Interop.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\Release\x86\SQLite.Interop.dll"; DestDir: "{app}\x86"; Flags: ignoreversion
+; SQLite原生库 (x64)
+Source: "bin\Release\x64\SQLite.Interop.dll"; DestDir: "{app}\x64"; Flags: ignoreversion
 ; 配置文件
 Source: "bin\Release\*.config"; DestDir: "{app}"; Flags: ignoreversion
 ; LOGO文件
 Source: "LOGO.png"; DestDir: "{app}"; Flags: ignoreversion
+Source: "LOGO.jpg"; DestDir: "{app}"; Flags: ignoreversion
 
 [Dirs]
 ; 创建数据目录
 Name: "{app}\data"
+; 创建x86目录
+Name: "{app}\x86"
+; 创建x64目录
+Name: "{app}\x64"
 
 [Icons]
 ; 开始菜单快捷方式

@@ -18,7 +18,6 @@ namespace 单位抽考win7软件.UI.Forms
         public PersonForm()
         {
             InitializeComponent();
-            ModernTechTheme.ApplyTheme(this);
             _personService = new PersonService();
             _orgUnitService = new OrgUnitService();
             LoadOrgUnits();

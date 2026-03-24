@@ -2,15 +2,8 @@ namespace 单位抽考win7软件.UI.Forms
 {
     partial class NewExamDrawForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@ namespace 单位抽考win7软件.UI.Forms
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.panelHeader = new System.Windows.Forms.Panel();
@@ -63,7 +52,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(120)))));
             this.panelHeader.Controls.Add(this.lblTitle);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
@@ -84,7 +73,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // panelSteps
             // 
-            this.panelSteps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(220)))));
+            this.panelSteps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(200)))));
             this.panelSteps.Controls.Add(this.lblStep4);
             this.panelSteps.Controls.Add(this.lblStep3);
             this.panelSteps.Controls.Add(this.lblStep2);
@@ -135,7 +124,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             this.lblStep1.AutoSize = true;
             this.lblStep1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblStep1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblStep1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(70)))));
             this.lblStep1.Location = new System.Drawing.Point(120, 30);
             this.lblStep1.Name = "lblStep1";
             this.lblStep1.Size = new System.Drawing.Size(154, 22);
@@ -146,7 +135,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             this.lblArrow3.AutoSize = true;
             this.lblArrow3.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold);
-            this.lblArrow3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblArrow3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(70)))));
             this.lblArrow3.Location = new System.Drawing.Point(700, 28);
             this.lblArrow3.Name = "lblArrow3";
             this.lblArrow3.Size = new System.Drawing.Size(33, 26);
@@ -157,7 +146,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             this.lblArrow2.AutoSize = true;
             this.lblArrow2.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold);
-            this.lblArrow2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblArrow2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(70)))));
             this.lblArrow2.Location = new System.Drawing.Point(490, 28);
             this.lblArrow2.Name = "lblArrow2";
             this.lblArrow2.Size = new System.Drawing.Size(33, 26);
@@ -168,7 +157,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             this.lblArrow1.AutoSize = true;
             this.lblArrow1.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold);
-            this.lblArrow1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblArrow1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(70)))));
             this.lblArrow1.Location = new System.Drawing.Point(280, 28);
             this.lblArrow1.Name = "lblArrow1";
             this.lblArrow1.Size = new System.Drawing.Size(33, 26);
@@ -177,7 +166,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // panelContent
             // 
-            this.panelContent.BackColor = System.Drawing.Color.White;
+            this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(210)))));
             this.panelContent.Controls.Add(this.panelResult);
             this.panelContent.Controls.Add(this.lblResult);
             this.panelContent.Controls.Add(this.lblDescription);
@@ -205,7 +194,7 @@ namespace 单位抽考win7软件.UI.Forms
             this.dgvResult.AllowUserToAddRows = false;
             this.dgvResult.AllowUserToDeleteRows = false;
             this.dgvResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvResult.BackgroundColor = System.Drawing.Color.White;
+            this.dgvResult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(210)))));
             this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvResult.Location = new System.Drawing.Point(0, 40);
@@ -220,7 +209,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             this.lblResultTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblResultTitle.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold);
-            this.lblResultTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblResultTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(70)))));
             this.lblResultTitle.Location = new System.Drawing.Point(0, 0);
             this.lblResultTitle.Name = "lblResultTitle";
             this.lblResultTitle.Size = new System.Drawing.Size(904, 40);
@@ -232,7 +221,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             this.lblResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblResult.Font = new System.Drawing.Font("微软雅黑", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(70)))));
             this.lblResult.Location = new System.Drawing.Point(40, 130);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(904, 251);
@@ -256,7 +245,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             this.lblStepTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblStepTitle.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblStepTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblStepTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(70)))));
             this.lblStepTitle.Location = new System.Drawing.Point(40, 40);
             this.lblStepTitle.Name = "lblStepTitle";
             this.lblStepTitle.Size = new System.Drawing.Size(904, 30);
@@ -266,7 +255,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // panelButtons
             // 
-            this.panelButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(220)))));
+            this.panelButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(200)))));
             this.panelButtons.Controls.Add(this.btnPrint);
             this.panelButtons.Controls.Add(this.btnExport);
             this.panelButtons.Controls.Add(this.btnComplete);
@@ -282,7 +271,8 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // btnPrint
             // 
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(120)))));
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnPrint.ForeColor = System.Drawing.Color.White;
             this.btnPrint.Location = new System.Drawing.Point(700, 30);
@@ -296,7 +286,8 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // btnExport
             // 
-            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(120)))));
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnExport.ForeColor = System.Drawing.Color.White;
             this.btnExport.Location = new System.Drawing.Point(550, 30);
@@ -310,7 +301,8 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // btnComplete
             // 
-            this.btnComplete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.btnComplete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(120)))));
+            this.btnComplete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComplete.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnComplete.ForeColor = System.Drawing.Color.White;
             this.btnComplete.Location = new System.Drawing.Point(550, 30);
@@ -324,7 +316,8 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(120)))));
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Location = new System.Drawing.Point(550, 30);
@@ -339,6 +332,7 @@ namespace 单位抽考win7软件.UI.Forms
             // btnPrevious
             // 
             this.btnPrevious.BackColor = System.Drawing.Color.Gray;
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevious.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnPrevious.ForeColor = System.Drawing.Color.White;
             this.btnPrevious.Location = new System.Drawing.Point(400, 30);
@@ -352,7 +346,8 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // btnStop
             // 
-            this.btnStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStop.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnStop.ForeColor = System.Drawing.Color.White;
             this.btnStop.Location = new System.Drawing.Point(550, 30);
@@ -366,7 +361,8 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             // btnStart
             // 
-            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(120)))));
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnStart.ForeColor = System.Drawing.Color.White;
             this.btnStart.Location = new System.Drawing.Point(400, 30);
@@ -381,7 +377,7 @@ namespace 单位抽考win7软件.UI.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(220)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelButtons);

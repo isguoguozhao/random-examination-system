@@ -677,7 +677,7 @@ namespace 单位抽考win7软件.BLL.Services
         /// </summary>
         private ExamActivityFinalResult DataRowToFinalResult(DataRow row)
         {
-            return new ExamActivityFinalResult
+            var result = new ExamActivityFinalResult
             {
                 Id = Convert.ToInt32(row["Id"]),
                 ActivityId = Convert.ToInt32(row["ActivityId"]),
@@ -686,6 +686,19 @@ namespace 单位抽考win7软件.BLL.Services
                 TaskResultId = Convert.ToInt32(row["TaskResultId"]),
                 CreateTime = Convert.ToDateTime(row["CreateTime"])
             };
+
+            if (row.Table.Columns.Contains("Content1TaskName") && row["Content1TaskName"] != DBNull.Value)
+                result.Content1TaskName = Convert.ToString(row["Content1TaskName"]);
+            if (row.Table.Columns.Contains("Content1CommanderName") && row["Content1CommanderName"] != DBNull.Value)
+                result.Content1CommanderName = Convert.ToString(row["Content1CommanderName"]);
+            if (row.Table.Columns.Contains("Content2TaskName") && row["Content2TaskName"] != DBNull.Value)
+                result.Content2TaskName = Convert.ToString(row["Content2TaskName"]);
+            if (row.Table.Columns.Contains("Content2CommanderName") && row["Content2CommanderName"] != DBNull.Value)
+                result.Content2CommanderName = Convert.ToString(row["Content2CommanderName"]);
+            if (row.Table.Columns.Contains("DrawTime") && row["DrawTime"] != DBNull.Value)
+                result.DrawTime = Convert.ToDateTime(row["DrawTime"]);
+
+            return result;
         }
 
         // 别名方法，用于兼容窗体代码
@@ -704,6 +717,42 @@ namespace 单位抽考win7软件.BLL.Services
                 SQLiteHelper.CreateParameter("@SortNo", result.SortNo),
                 SQLiteHelper.CreateParameter("@IsMustHit", result.IsMustHit),
                 SQLiteHelper.CreateParameter("@DrawTime", result.DrawTime)
+            });
+        }
+        public void SaveTaskResult(ExamActivityTaskResult result)
+        {
+            string sql = @"INSERT INTO ExamActivityTaskResult (ActivityId, TaskPlanId, SortNo, IsMustHit, DrawTime)
+                           VALUES (@ActivityId, @TaskPlanId, @SortNo, @IsMustHit, @DrawTime);
+                           SELECT last_insert_rowid();";
+            object resultId = SQLiteHelper.ExecuteScalar(sql, new SQLiteParameter[]
+            {
+                SQLiteHelper.CreateParameter("@ActivityId", result.ActivityId),
+                SQLiteHelper.CreateParameter("@TaskPlanId", result.TaskPlanId),
+                SQLiteHelper.CreateParameter("@SortNo", result.SortNo),
+                SQLiteHelper.CreateParameter("@IsMustHit", result.IsMustHit),
+                SQLiteHelper.CreateParameter("@DrawTime", result.DrawTime)
+            });
+            if (resultId != null && resultId != DBNull.Value)
+            {
+                result.Id = Convert.ToInt32(resultId);
+            }
+        }
+        public void SaveFinalResult(ExamActivityFinalResult result)
+        {
+            string sql = @"INSERT INTO ExamActivityFinalResult (ActivityId, SortNo, GroupResultId, TaskResultId, Content1TaskName, Content1CommanderName, Content2TaskName, Content2CommanderName, DrawTime, CreateTime)
+                           VALUES (@ActivityId, @SortNo, @GroupResultId, @TaskResultId, @Content1TaskName, @Content1CommanderName, @Content2TaskName, @Content2CommanderName, @DrawTime, @CreateTime)";
+            SQLiteHelper.ExecuteNonQuery(sql, new SQLiteParameter[]
+            {
+                SQLiteHelper.CreateParameter("@ActivityId", result.ActivityId),
+                SQLiteHelper.CreateParameter("@SortNo", result.SortNo),
+                SQLiteHelper.CreateParameter("@GroupResultId", result.GroupResultId),
+                SQLiteHelper.CreateParameter("@TaskResultId", result.TaskResultId),
+                SQLiteHelper.CreateParameter("@Content1TaskName", result.Content1TaskName),
+                SQLiteHelper.CreateParameter("@Content1CommanderName", result.Content1CommanderName),
+                SQLiteHelper.CreateParameter("@Content2TaskName", result.Content2TaskName),
+                SQLiteHelper.CreateParameter("@Content2CommanderName", result.Content2CommanderName),
+                SQLiteHelper.CreateParameter("@DrawTime", result.DrawTime),
+                SQLiteHelper.CreateParameter("@CreateTime", result.CreateTime)
             });
         }
         public void ExportResultsToExcel(int activityId, string filePath)

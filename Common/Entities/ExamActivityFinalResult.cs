@@ -43,6 +43,31 @@ namespace 单位抽考win7软件.Common.Entities
         public string TaskPlanName { get; set; }
 
         /// <summary>
+        /// 考核内容1任务（非数据库字段，用于显示）
+        /// </summary>
+        public string Content1TaskName { get; set; }
+
+        /// <summary>
+        /// 考核内容1指挥员（非数据库字段，用于显示）
+        /// </summary>
+        public string Content1CommanderName { get; set; }
+
+        /// <summary>
+        /// 考核内容2任务（非数据库字段，用于显示）
+        /// </summary>
+        public string Content2TaskName { get; set; }
+
+        /// <summary>
+        /// 考核内容2指挥员（非数据库字段，用于显示）
+        /// </summary>
+        public string Content2CommanderName { get; set; }
+
+        /// <summary>
+        /// 抽考时间（非数据库字段，用于显示）
+        /// </summary>
+        public DateTime DrawTime { get; set; }
+
+        /// <summary>
         /// 创建时间
         /// </summary>
         public DateTime CreateTime { get; set; }

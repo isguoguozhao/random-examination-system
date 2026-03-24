@@ -47,8 +47,6 @@ namespace 单位抽考win7软件.UI.Forms
             _isAnimating = false;
             
             InitializeAnimationTimer();
-            
-            ModernTechTheme.ApplyTheme(this);
         }
 
         private void NewExamDrawForm_Load(object sender, EventArgs e)
@@ -125,10 +123,10 @@ namespace 单位抽考win7软件.UI.Forms
         private void UpdateUI()
         {
             // 更新步骤指示器
-            lblStep1.ForeColor = _currentStep >= 1 ? Color.FromArgb(0, 51, 102) : Color.Gray;
-            lblStep2.ForeColor = _currentStep >= 2 ? Color.FromArgb(0, 51, 102) : Color.Gray;
-            lblStep3.ForeColor = _currentStep >= 3 ? Color.FromArgb(0, 51, 102) : Color.Gray;
-            lblStep4.ForeColor = _currentStep >= 4 ? Color.FromArgb(0, 51, 102) : Color.Gray;
+            lblStep1.ForeColor = _currentStep >= 1 ? Color.FromArgb(100, 130, 70) : Color.Gray;
+            lblStep2.ForeColor = _currentStep >= 2 ? Color.FromArgb(100, 130, 70) : Color.Gray;
+            lblStep3.ForeColor = _currentStep >= 3 ? Color.FromArgb(100, 130, 70) : Color.Gray;
+            lblStep4.ForeColor = _currentStep >= 4 ? Color.FromArgb(100, 130, 70) : Color.Gray;
             
             lblStep1.Font = _currentStep == 1 ? new Font("微软雅黑", 12F, FontStyle.Bold) : new Font("微软雅黑", 12F, FontStyle.Regular);
             lblStep2.Font = _currentStep == 2 ? new Font("微软雅黑", 12F, FontStyle.Bold) : new Font("微软雅黑", 12F, FontStyle.Regular);
@@ -308,13 +306,12 @@ namespace 单位抽考win7软件.UI.Forms
 
         private void ApplyResultGridStyle()
         {
-            dgvResult.BackgroundColor = Color.FromArgb(245, 245, 220);
-            dgvResult.BorderStyle = BorderStyle.None;
+            dgvResult.BackgroundColor = Color.FromArgb(230, 240, 210);
             dgvResult.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvResult.RowTemplate.Height = 40;
 
             // 列标题样式
-            dgvResult.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 51, 102);
+            dgvResult.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(150, 180, 120);
             dgvResult.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvResult.ColumnHeadersDefaultCellStyle.Font = new Font("微软雅黑", 12F, FontStyle.Bold);
             dgvResult.ColumnHeadersHeight = 45;
@@ -324,8 +321,8 @@ namespace 单位抽考win7软件.UI.Forms
             dgvResult.DefaultCellStyle.BackColor = Color.White;
             dgvResult.DefaultCellStyle.ForeColor = Color.Black;
             dgvResult.DefaultCellStyle.Font = new Font("微软雅黑", 11F);
-            dgvResult.DefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 102, 153);
-            dgvResult.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 240);
+            dgvResult.DefaultCellStyle.SelectionBackColor = Color.FromArgb(150, 180, 120);
+            dgvResult.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 250, 235);
         }
 
         private void btnComplete_Click(object sender, EventArgs e)

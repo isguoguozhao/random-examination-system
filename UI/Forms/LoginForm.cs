@@ -14,18 +14,8 @@ namespace 单位抽考win7软件.UI.Forms
         {
             InitializeComponent();
             _userService = new UserService();
-            ApplyModernTheme();
             LoadLogo();
             LoadSavedAccount();
-        }
-
-        private void ApplyModernTheme()
-        {
-            ModernTechTheme.ApplyTheme(this);
-            ModernTechTheme.ApplyGlassCardStyle(this.panelGlass);
-            ModernTechTheme.ApplyTitleLabelStyle(this.lblSystemName);
-            ModernTechTheme.ApplySecondaryButtonStyle(this.btnCancel);
-            this.panelGlass.BackColor = Color.FromArgb(179, 30, 41, 59);
         }
 
         private void LoadLogo()
